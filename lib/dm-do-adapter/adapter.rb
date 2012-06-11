@@ -224,7 +224,7 @@ module DataMapper
             keys = [
               :adapter, :user, :password, :host, :port, :path, :fragment,
               :scheme, :query, :username, :database ]
-            query = DataMapper::Ext::Hash.except(@options, keys)
+            query = DataMapper::Ext::Hash.except(@options, *keys)
             query = nil if query.empty?
 
             # Better error message in case port is no Numeric value
